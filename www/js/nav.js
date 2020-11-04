@@ -31,7 +31,7 @@ $(document).ready(function () {
         location.href = "test.html"
     })
     $('#backhome').on('click', function () {
-        location.href = "index.html";
+        $('#listrest').empty()
         home();
     })
     $('#rate-form').on('submit', function () {
