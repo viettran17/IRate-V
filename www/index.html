@@ -2,140 +2,235 @@
 <html>
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="msapplication-tap-highlight" content="no" />
-  <meta name="viewport"
-    content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-  <link rel="stylesheet" type="text/css" href="css/index.css" />
-  <title>I-rate Restaurant</title>
-  <link rel="shortcut icon" href="img/res.png">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <title>IRate</title>
 </head>
 
 <body>
-  <!-- <div data-role="page" id="home"> -->
-    <div class="jumbotron text-center" style="margin-bottom:0">
-      <img src="img/res.png" class="img-responsive">
-    </div>
-    <nav class="navbar navbar-expand-sm navbar-light d-flex">
-      <div class="justify-content-center">
-        <a href="#home"><button>Home</button></a>
-        <a href="#rate"><button>Rate</button></a>
-      </div>
-    </nav>
-    <div class="container" style="margin-top:30px">
-      <div class="row">
-        <div class="col-sm-8">
-          <ul id="listrest">
+    <div data-role="page" id="home">
+        <div data-role="header">
+            <div class="jumbotron">
+                <div class="container text-center">
+                <h1 style="font-size:25px"><img src="https://img.icons8.com/dusk/64/000000/angry-face.png"/>IRate</h1>
+                </div>
+              </div>
+              <nav class="navbar navbar-expand-sm bg-light navbar-light d-flex justify-content-center">
+                <a href="#home" id="homepage"><button  style=" background-color: #00ff80;">Home<i class="fa fa-home" aria-hidden="true"></i></button></a>
+                <a href="#search"><button  style="background-color: #66ccff" >Search<i class="fa fa-search" aria-hidden="true"></i></button></a>
+                <a href="#add"> <button  style="background-color: #ff8000">Rated<i class="fa fa-plus-square-o" aria-hidden="true"></i></button></a>
+              </nav>
+        </div>
+        <div data-role="main" class="ui-content container">
+            <div class="row" data-role="listview" id="pageContent">
+                <div class="container py-5">
+                    <div class="row text-center mb-5">
+                        <div class="col-lg-7 mx-auto">
+                            <h5 class="display-4">Restaurant List</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
 
-          </ul>
-          <!-- <form class="ui-filterable">
-            <input id="filterBasic-input" data-type="search">
-          </form>
-          <ul data-role="listview" data-filter="true" data-input="#filterBasic-input" id="listrest">
-          </ul> -->
-
-          <!-- MODEL -->
-          <div class="modal" id="detail" tabindex="-1" role="dialog" aria-labelledby=""
-            aria-hidden="true">
+                            <ul class="list-group shadow" id="listrest">
+                                      
+                            </ul> 
+                        </div>
+                    </div>
+                </div> 
+          </div>  
           </div>
+        <div data-role="footer" class="container-fluid text-center">
+            <div class="d-flex justify-content-center">
+                <a href="#home" id="homepage"><button  style=" background-color: #00ff80;">Home<i class="fa fa-home" aria-hidden="true"></i></button></a>
+                <a href="#search"><button  style="background-color: #66ccff" >Search<i class="fa fa-search" aria-hidden="true"></i></button></a>
+                <a href="#add"> <button  style="background-color: #ff8000">Rated<i class="fa fa-plus-square-o" aria-hidden="true"></i></button></a>
+            </div>
         </div>
       </div>
-    </div>
-  <!-- </div> -->
+
+
+
+      <div data-role="page" id="add">
+        <div data-role="header">
+            <div class="jumbotron">
+                <div class="container text-center">
+                <h1 style="font-size:25px"><img src="https://img.icons8.com/dusk/64/000000/angry-face.png"/>IRate</h1>
+                </div>
+              </div>
+              <nav class="navbar navbar-expand-sm bg-light navbar-light d-flex justify-content-center">
+                <a href="#home" id="homepage"><button  style=" background-color: #00ff80;">Home<i class="fa fa-home" aria-hidden="true"></i></button></a>
+                <a href="#search"><button  style="background-color: #66ccff" >Search<i class="fa fa-search" aria-hidden="true"></i></button></a>
+                <a href="#add"> <button  style="background-color: #ff8000">Rated<i class="fa fa-plus-square-o" aria-hidden="true"></i></button></a>
+        </div>
+        <div data-role="main" class="ui-content container">
+            <div class="row" data-role="listview" id="pageContent">
+                <div class="container" id="addContent"> 
+                    <h2>Rated</h2>
+                    <form id="rate" name="rate">
+                        <div >
+                            <div class="form-group" id="owner" data-role="fieldcontain">
+                                <label>Your name</label>
+                                <input type="text" class="form-control" name="owner_name"  placeholder="Enter your name" id="owner_name" title="Please only enter text">
+                            </div>
+                            <div class="form-group" id="phone" data-role="fieldcontain">
+                                <label>Your phone</label>
+                                <input type="text" class="form-control" name="owner_phone" placeholder="Enter your phone" id="owner_phone"  >
+                            </div>
+                            <div class="form-group" id="rest-name" data-role="fieldcontain">
+                                <label>Restaurant name</label>
+                                <input type="text" class="form-control" name="restaurant_name"  placeholder="Enter restaurant name" id="restaurant_name">
+                            </div>
+                            <div class="form-group" id="resType" data-role="fieldcontain">
+                                <label>Restaurant type</label>
+                                <input  id="res_types"  name="res_types" list= "res-type" type="text"/>
+                                <datalist id="res-type">
+                                    <option value="Grill">
+                                    <option value="Fast food">
+                                    <option value="Cake">
+                                    <option value="Seafood">
+                                </datalist>
+                            </div>
+                            <div class="form-group" id="address" data-role="fieldcontain">
+                                <label>Restaurant address</label>
+                                <input type="text" class="form-control" name="res_address"  placeholder="Enter restaurant address" id="res_address" >
+                            </div>
+                            <div class="form-group" id="rate-services" data-role="fieldcontain">
+                                <label>Service</label>
+                                <select id="service_rate"  name="service_rate" type= "text" >
+                                        <option value=""></option>
+                                        <option value="1">Bad</option>
+                                        <option value="2">Normal</option>
+                                        <option value="3">Rather</option>
+                                        <option value="4">Good</option>
+                                        <option value="5">Excellent</option>
+                                    </select>
+                            </div>
+                            <div class="form-group" id="rate-cleans" data-role="fieldcontain">
+                                <label>Cleanliness</label>
+                                
+                                <select list="cleans"  id="clean_rate" name="clean_rate" type = "text" >
+                                    <option></option>
+                                    <option value="1">Bad</option>
+                                    <option value="2">Normal</option>
+                                    <option value="3">Rather</option>
+                                    <option value="4">Good</option>
+                                    <option value="5">Excellent</option>
+                                </select>
+                            </div>
+                            <div class="form-group" id="foods-rate" data-role="fieldcontain">
+                                <label>Food quality</label>
+                                <select list="foods"  id="food_rate" name="foods_rate" type="text">
+                                            <option></option>
+                                            <option value="1">Bad</option>
+                                            <option value="2">Normal</option>
+                                            <option value="3">Rather</option>
+                                            <option value="4">Good</option>
+                                            <option value="5">Excellent</option>
+                                        </select>
+                            </div>
+                            <div class="form-group" data-role="fieldcontain">
+                                <label>Day and time of visit</label>
+                                <div id="date-visit">
+                                <input type="date" class="form-control" id="date" name="date">
+                                </div>
+                                <div id="time-visit">
+                                    <input type="time" class="form-control"  id="time"  name="time">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                            <label >Notes</label>
+                            <textarea class="form-control" id="notes" name="notes" rows="3"></textarea>
+                        </div>
+                        <button data-role="submit" type="submit" style="background-color: #248f24; color: white;">Post</button>
+                        </div>
+                    </form>
+                  </div>
+          </div>  
+        </div>
+        <div data-role="footer" class="container-fluid text-center">
+            <div class="d-flex justify-content-center">
+                <a href="#home" id="homepage"><button  style=" background-color: #00ff80;">Home<i class="fa fa-home" aria-hidden="true"></i></button></a>
+                <a href="#search"><button  style="background-color: #66ccff" >Search<i class="fa fa-search" aria-hidden="true"></i></button></a>
+                <a href="#add"> <button  style="background-color: #ff8000">Rated<i class="fa fa-plus-square-o" aria-hidden="true"></i></button></a>
+            </div>
+        </div>
+      </div>
 
 
 
 
-  
-  <!-- <div data-role="page" id="rate">
-    <div class="jumbotron text-center" style="margin-bottom:0">
-      <img src="img/res.png" class="img-responsive" >
-    </div>
-    <nav class="navbar navbar-expand-sm navbar-light d-flex">
-      <div class="justify-content-center">
-        <a href="#home"><button>Home</button></a>
-        <a href="#rate"><button>Rate</button></a>
-      </div>  
-    </nav>
-    <div class="container" style="margin-top:30px">
-      <div class="app">
-        <form id="rate-form">
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Restaurant name</label>
-            <input type="text" class="form-control" name="Restaurant_Name" id="Restaurant_Name" placeholder="" required>
+      <div data-role="page" id="search">
+        <div data-role="header">
+            <div class="jumbotron">
+                <div class="container text-center">
+                <h1 style="font-size:25px"><img src="https://img.icons8.com/dusk/64/000000/angry-face.png"/>IRate</h1>
+                </div>
+              </div>
+              <nav class="navbar navbar-expand-sm bg-light navbar-light d-flex justify-content-center">
+                <a href="#home" id="homepage"><button  style=" background-color: #00ff80;">Home<i class="fa fa-home" aria-hidden="true"></i></button></a>
+                <a href="#search"><button  style="background-color: #66ccff" >Search<i class="fa fa-search" aria-hidden="true"></i></button></a>
+                <a href="#add"> <button  style="background-color: #ff8000">Rated<i class="fa fa-plus-square-o" aria-hidden="true"></i></button></a>              
+            </nav>
         </div>
-        <div class="form-group">
-            <label for="exampleFormControlInput1">Restaurant type</label>
-            <input type="text" class="form-control" name="Restaurant_Type" id="Restaurant_Type" placeholder="" required>
+        <div data-role="main" class="ui-content container">
+            <div class="mg-0" data-role="listview">
+                <ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search Restaurant..." data-inset="true" id="filter-search">
+                </ul>
+             </div>  
         </div>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Restaurant address</label>
-          <input type="text" class="form-control" name="Restaurant_Address" id="Restaurant_Address" placeholder="" required>
+        <div data-role="footer" class="container-fluid text-center" id="footer">
+            <div class="d-flex justify-content-center">
+                <a href="#home" id="homepage"><button  style=" background-color: #00ff80;">Home<i class="fa fa-home" aria-hidden="true"></i></button></a>
+                <a href="#search"><button  style="background-color: #66ccff" >Search<i class="fa fa-search" aria-hidden="true"></i></button></a>
+                <a href="#add"> <button  style="background-color: #ff8000">Rated<i class="fa fa-plus-square-o" aria-hidden="true"></i></button></a>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Service rate</label>
-            <select class="form-control" name="Service_Rate" id="Service_Rate" required>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
+      </div>
+
+      <div data-role="page" id="detail">
+        <div data-role="header">
+            <div class="jumbotron">
+                <div class="container text-center">
+                <h1 style="font-size:25px"><img src="https://img.icons8.com/dusk/64/000000/angry-face.png"/>IRate</h1>
+                </div>
+              </div>
+              <nav class="navbar navbar-expand-sm bg-light navbar-light d-flex justify-content-center">
+                <a href="#home" id="homepage"><button  style=" background-color: #00ff80;">Home<i class="fa fa-home" aria-hidden="true"></i></button></a>
+                <a href="#search"><button  style="background-color: #66ccff" >Search<i class="fa fa-search" aria-hidden="true"></i></button></a>
+                <a href="#add"> <button  style="background-color: #ff8000">Rated<i class="fa fa-plus-square-o" aria-hidden="true"></i></button></a>              
+            </nav>
         </div>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Clean rate</label>
-            <select class="form-control" name="Clean_Rate" id="Clean_Rate" required>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
+        <div data-role="main" class="ui-content container">
+            <div class="mg-0 " data-role="listview" id="detailContent">
+                </div>
         </div>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Food rate</label>
-            <select class="form-control" name="Food_Rate" id="Food_Rate" required>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
+        <div data-role="footer" class="container-fluid text-center">
+            <div class="d-flex justify-content-center">
+                <a href="#home" id="homepage"><button  style=" background-color: #00ff80;">Home<i class="fa fa-home" aria-hidden="true"></i></button></a>
+                <a href="#search"><button  style="background-color: #66ccff" >Search<i class="fa fa-search" aria-hidden="true"></i></button></a>
+                <a href="#add"> <button  style="background-color: #ff8000">Rated<i class="fa fa-plus-square-o" aria-hidden="true"></i></button></a>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="exampleFormControlInput1">Price</label>
-            <input type="text" class="form-control" name="Price" id="Price" placeholder="" required>
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Date</label>
-          <input type="date" class="form-control" name="Date" id="Date" placeholder="" required>
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">Note</label>
-            <textarea class="form-control" name="Notes" id="Notes" rows="5" required></textarea>
-        </div>
-        <div class="add_rate_button">
-            <button class= "btn-search" type="submit">Submit</button>
-        </div>
-        </form>
-    </div>
-    </div>
-  </div> -->
-  <script type="text/javascript" src="cordova.js"></script>
-  <script type="text/javascript" src="js/index.js"></script>
-  <script type="text/javascript" src="js/database.js"></script>
-  <script type="text/javascript" src="js/nav.js"></script>
-  <script type="text/javascript">
-    app.initialize();
-  </script>
+      </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/nav.js"></script>
+    <script type="text/javascript" src="js/database.js"></script> 
+    <script type="text/javascript">
+        app.initialize();
+    </script>
 </body>
 
 </html>
