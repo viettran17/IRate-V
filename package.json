@@ -45,5 +45,7 @@
       "cordova-plugin-whitelist": {}
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "cordova-browser": "^6.0.0"
+  }
 }
