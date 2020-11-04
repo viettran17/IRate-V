@@ -27,7 +27,7 @@ function home() {
 }
 $(window).on("load", function () {
     home()
-  });
+});
 
 $(document).ready(function () {
     $('#rate-view').on('click', function () {
