@@ -4,12 +4,9 @@ function home() {
         const results = event.target.result
         for (var i in results.reverse()) {
             let html = `
-            <li>
+            <li rateId="${results[i].id}">
                 <div class="card-group vgr-cards">
                     <div class="card">
-                        <div class="card-img-body">
-                            <img id="GetDetailsRes" rateId="${results[i].id}" data-toggle="modal" data-target="#detail" class="card-img" src="${results[i].image}" alt="Card image cap" height="200px" width="380px">
-                        </div>
                         <div class="card-body">
                             <a id="GetDetailsRes" rateId="${results[i].id}" data-toggle="modal" data-target="#detail">
                                 <h4 class="card-title">${results[i].Restaurant_Name}</h4>
@@ -25,8 +22,9 @@ function home() {
         }
     }
 }
-
-
+$(window).on("load", function () {
+    home()
+});
 $(document).ready(function () {
     $('#backhome').on('click', function () {
         $('#listrest').empty()
