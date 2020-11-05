@@ -22,13 +22,9 @@ function home() {
         }
     }
 }
-$(window).on("load", function () {
-    home()
-});
 $(document).ready(function () {
     $('#backhome').on('click', function () {
-        $('#listrest').empty()
-        home();
+        location.href = "index.html"
     })
     $('#rate-form').on('submit', function () {
         const rate = {
