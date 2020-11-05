@@ -71,8 +71,8 @@ function GetRes(collectionName) {
 async function AddRes(collectionName, data) {
     const Newdata = await database.transaction([collectionName], "readwrite").objectStore(collectionName).add(data)
     Newdata.onsuccess = () => {
-        window.localStorage = "#add"
-        $('#rate').each(function () {
+        location.href = "index.html"
+        $('#rate-form').each(function () {
             this.reset()
         })
         navigator.notification.beep(1);

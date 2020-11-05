@@ -33,10 +33,10 @@ $(document).ready(function () {
     // $('#rate-view').on('click', function () {
     //     location.href = "test.html"
     // })
-    // $('#backhome').on('click', function () {
-    //     $('#listrest').empty()
-    //     home();
-    // })
+    $('#backhome').on('click', function () {
+        $('#listrest').empty()
+        home();
+    })
     $('#rate-form').on('submit', function () {
         const rate = {
             Restaurant_Name: $('#Restaurant_Name').val(),
@@ -49,8 +49,8 @@ $(document).ready(function () {
             Date: $('#Date').val(),
             Notes: $('#Notes').val(),
         }
-        console.log(rate)
-        // AddRes("I-RateRes", rate)
+        AddRes("I-RateRes", rate)
+        return false
     })
     $(document).on('click', '#DeleteRes', function () {
         const rateid = $(this).attr("rateId")
