@@ -74,8 +74,6 @@ async function AddRes(collectionName, data) {
         navigator.notification.beep(1);
         navigator.vibrate(100)
         alert("You Rated Successfully")
-        $('#listrest').empty()
-        home()
     }
     Newdata.onerror = () => {
         alert('Error Rate')
