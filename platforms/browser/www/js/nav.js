@@ -22,6 +22,9 @@ function home() {
         }
     }
 }
+$(window).on("load", function () {
+    home()
+});
 $(document).ready(function () {
     $('#backhome').on('click', function () {
         location.href = "index.html"
