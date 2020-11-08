@@ -42,6 +42,7 @@ $(document).ready(function () {
             Notes: $('#Notes').val(),
         }
         AddRes("I-RateRes", rate)
+        location.href = "index.html"
         return false
     })
     $(document).on('click', '#DeleteRes', function () {
