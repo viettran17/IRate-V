@@ -27,7 +27,8 @@ $(window).on("load", function () {
 });
 $(document).ready(function () {
     $('#backhome').on('click', function () {
-        location.href = "index.html"
+        $('#listrest').empty()
+        home()
     })
     $('#rate-form').on('submit', function () {
         const rate = {

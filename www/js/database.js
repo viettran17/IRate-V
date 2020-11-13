@@ -74,6 +74,7 @@ async function AddRes(collectionName, data) {
         navigator.vibrate(100)
         alert("You Rated Successfully")
         location.href = "index.html"
+        home()
     }
     Newdata.onerror = () => {
         alert('Error Rate')
