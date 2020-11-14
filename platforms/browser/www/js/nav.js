@@ -20,9 +20,11 @@ function home() {
         }
     }
 }
-
+$(window).on("load", function () {
+    home()
+});
 $(document).ready(function () {
-    $('#backhome').on('click', function () {
+    $('#home').on('click', function () {
         $('#listrest').empty()
         home()
     })
