@@ -45,14 +45,17 @@
   <div class="container" style="margin-top:30px">
     <div class="row">
       <div class="col-sm-8">
-        <ul data-role="listview" data-filter="true" data-filter-placeholder="Find cars..." data-filter-theme="a" data-inset="true" id="listrest">
+        <form class="ui-filterable">
+          <input id="filterBasic-input" data-type="search">
+      </form>
+      <ul data-role="listview" data-filter="true" data-input="#filterBasic-input" id="listrest">
       </ul>
       </div>
     </div>
   </div>
-  <div class="modal" id="detail" tabindex="-1" role="dialog" aria-labelledby=""
-            aria-hidden="true">
-  </div>
+</div>
+<div class="modal" id="detail" tabindex="-1" role="dialog" aria-labelledby=""
+aria-hidden="true">
 </div>
   <script type="text/javascript" src="cordova.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
