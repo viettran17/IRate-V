@@ -4,7 +4,6 @@ function home() {
         const results = event.target.result
         for (var i in results.reverse()) {
             let html = `
-            <li rateId="${results[i].id}">
                 <div class="card-group vgr-cards">
                     <div class="card">
                         <div class="card-body">
@@ -16,7 +15,6 @@ function home() {
                         </div>
                     </div>
                 </div>
-            </li>
             `
             $('#listrest').append(html);
         }
