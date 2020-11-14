@@ -22,6 +22,7 @@ function home() {
 }
 $(window).on("load", function () {
     home()
+    alert("Home")
 });
 $(document).ready(function () {
     $('#home').on('click', function () {
