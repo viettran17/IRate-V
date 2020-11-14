@@ -73,7 +73,6 @@ async function AddRes(collectionName, data) {
         navigator.notification.beep(1);
         navigator.vibrate(100)
         alert("You Rated Successfully")
-        $(location).attr('href', "#index")
         $('listrest').empty()
         home()
     }
