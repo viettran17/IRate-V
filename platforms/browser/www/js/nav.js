@@ -22,7 +22,7 @@ function home() {
 }
 $(window).on("load", function () {
     home()
-  });
+});
 $(document).ready(function () {
     $('#home').on('click', function () {
         $('#listrest').empty()
