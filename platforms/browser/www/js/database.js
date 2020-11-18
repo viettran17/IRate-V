@@ -74,15 +74,23 @@ async function AddRes(collectionName, data) {
         navigator.vibrate(100)
         alert("You Rated Successfully")
         $('#listrest').empty()
-        home()
+         home()
     }
     Newdata.onerror = () => {
-        alert('Error Rate')
+         alert('Error Rate')
     }
 }
 
 function DeleteRes(data) {
-    return  database.transaction(["I-RateRes"], "readwrite").objectStore("I-RateRes").delete(data)
+    const result =  database.transaction(["I-RateRes"], "readwrite").objectStore("I-RateRes").delete(data)
+    result.onsuccess = function() {
+        navigator.notification.beep(1);
+        navigator.vibrate(100)
+        $(location).attr('href', '/')
+    }
+    result.onerror = function() {
+        alert("Failed to delete")
+    }
 }
 
 function GetDetailsRes(data) {
@@ -91,26 +99,4 @@ function GetDetailsRes(data) {
         alert("Error getting")
     }
     return dataGet
-}
-function home() {
-    const res = GetRes("I-RateRes")
-    res.onsuccess = (event) => {
-        const results = event.target.result
-        for (var i in results.reverse()) {
-            let html = `
-                <div class="card-group vgr-cards">
-                    <div class="card">
-                        <div class="card-body">
-                            <a id="GetDetailsRes" rateId="${results[i].id}" data-toggle="modal" data-target="#detail">
-                                <h4 class="card-title">${results[i].Restaurant_Name}</h4>
-                            </a>
-                            <p class="card-text">${results[i].Restaurant_Type}</p>
-                            <a id="DeleteRes" rateId="${results[i].id}" class="btn btn-outline-primary">Delete</a>
-                        </div>
-                    </div>
-                </div>
-            `
-            $('#listrest').append(html);
-        }
-    }
 }
