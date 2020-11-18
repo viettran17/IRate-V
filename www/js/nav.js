@@ -1,25 +1,4 @@
-function home() {
-    const res = GetRes("I-RateRes")
-    res.onsuccess = (event) => {
-        const results = event.target.result
-        for (var i in results.reverse()) {
-            let html = `
-                <div class="card-group vgr-cards">
-                    <div class="card">
-                        <div class="card-body">
-                            <a id="GetDetailsRes" rateId="${results[i].id}" data-toggle="modal" data-target="#detail">
-                                <h4 class="card-title">${results[i].Restaurant_Name}</h4>
-                            </a>
-                            <p class="card-text">${results[i].Restaurant_Type}</p>
-                            <a id="DeleteRes" rateId="${results[i].id}" class="btn btn-outline-primary">Delete</a>
-                        </div>
-                    </div>
-                </div>
-            `
-            $('#listrest').append(html);
-        }
-    }
-}
+
 $(window).on("load", function() {
     home()
 });
