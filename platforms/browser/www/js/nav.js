@@ -6,6 +6,19 @@ $(document).ready(function() {
         $('#listrest').empty()
         home()
     })
+    $(document).on('click', '#DeleteRes', function() {
+        const rateid = $(this).attr("rateId")
+        const result = DeleteRes(Number(rateid))
+        result.onsuccess = function() {
+            navigator.notification.beep(1);
+            navigator.vibrate(100)
+            $('#listrest').empty()
+            home()
+        }
+        result.onerror = function() {
+            alert("Failed to delete")
+        }
+    })
     $(document).on('click', '#GetDetailsRes', function() {
         const rateId = $(this).attr("rateId")
         const result = GetDetailsRes(rateId)
