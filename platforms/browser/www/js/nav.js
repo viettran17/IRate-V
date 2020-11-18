@@ -47,8 +47,8 @@ $(document).ready(function() {
         const rateid = $(this).attr("rateId")
         const result = DeleteRes(Number(rateid))
         result.onsuccess = function() {
-            navigator.notification.beep(1);
-            navigator.vibrate(100)
+            // navigator.notification.beep(1);
+            // navigator.vibrate(100)
             $('#listrest').empty()
             home()
         }
