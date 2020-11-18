@@ -6,34 +6,6 @@ $(document).ready(function() {
         $('#listrest').empty()
         home()
     })
-    $('#rate-form').on('submit', function() {
-        const rate = {
-            Restaurant_Name: $('#Restaurant_Name').val(),
-            Restaurant_Type: $('#Restaurant_Type').val(),
-            Restaurant_Address: $('#Restaurant_Address').val(),
-            Service_Rate: $('#Service_Rate').val(),
-            Clean_Rate: $('#Clean_Rate').val(),
-            Food_Rate: $('#Food_Rate').val(),
-            Price: $('#Price').val(),
-            Date: $('#Date').val(),
-            Notes: $('#Notes').val(),
-        }
-        AddRes("I-RateRes", rate)
-        return false
-    })
-    $(document).on('click', '#DeleteRes', function() {
-        const rateid = $(this).attr("rateId")
-        const result = DeleteRes(Number(rateid))
-        result.onsuccess = function() {
-            navigator.notification.beep(1);
-            navigator.vibrate(100)
-            $('#listrest').empty()
-            home()
-        }
-        result.onerror = function() {
-            alert("Failed to delete")
-        }
-    })
     $(document).on('click', '#GetDetailsRes', function() {
         const rateId = $(this).attr("rateId")
         const result = GetDetailsRes(rateId)
