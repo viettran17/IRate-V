@@ -47,10 +47,13 @@ $(document).ready(function() {
         const rateid = $(this).attr("rateId")
         const result = DeleteRes(Number(rateid))
         result.onsuccess = function() {
-            $('#listrest').empty()
             navigator.notification.beep(1);
             navigator.vibrate(100)
+            $('#listrest').empty()
             home()
+        }
+        result.onerror = function() {
+            alert("Failed to delete")
         }
     })
     $(document).on('click', '#GetDetailsRes', function() {

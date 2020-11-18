@@ -73,9 +73,9 @@ async function AddRes(collectionName, data) {
         navigator.notification.beep(1);
         navigator.vibrate(100)
         alert("You Rated Successfully")
-        $(location).attr('href', "#homepage")
         $('#listrest').empty()
         home()
+        $(location).attr('href', "/")
     }
     Newdata.onerror = () => {
         alert('Error Rate')
@@ -84,9 +84,6 @@ async function AddRes(collectionName, data) {
 
 function DeleteRes(data) {
     const dataDelete = database.transaction(["I-RateRes"], "readwrite").objectStore("I-RateRes").delete(data)
-    dataDelete.onerror = function() {
-        alert("Error deleting")
-    }
     return dataDelete
 }
 
