@@ -83,8 +83,7 @@ async function AddRes(collectionName, data) {
 }
 
 function DeleteRes(data) {
-    const dataDelete = database.transaction(["I-RateRes"], "readwrite").objectStore("I-RateRes").delete(data)
-    return dataDelete
+    return  database.transaction(["I-RateRes"], "readwrite").objectStore("I-RateRes").delete(data)
 }
 
 function GetDetailsRes(data) {
