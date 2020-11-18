@@ -86,7 +86,7 @@ function DeleteRes(data) {
     result.onsuccess = function() {
         navigator.notification.beep(1);
         navigator.vibrate(100)
-        $(location).attr('href', '/')
+        $(location).attr('href', '#homepage')
     }
     result.onerror = function() {
         alert("Failed to delete")
