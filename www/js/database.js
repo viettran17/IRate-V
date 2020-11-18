@@ -75,7 +75,7 @@ async function AddRes(collectionName, data) {
         alert("You Rated Successfully")
         $('#listrest').empty()
         home()
-        // $(location).attr('href', "/")
+        $(location).attr('href', "/")
     }
     Newdata.onerror = () => {
         alert('Error Rate')
